@@ -45,10 +45,14 @@ RETURN DIVIDE(p + z^2/(2*n) + z*SQRT(p*(1-p)/n + z^2/(4*n^2)), 1 + z^2/n)
 
 Post-order Service Low Star % =
     DIVIDE(
-        CALCULATE([Reviews], reviews_tagged[low_star] = TRUE(),
-            reviews_tagged[customer_support_mentioned] = TRUE()
-            || reviews_tagged[refund_problem] = TRUE()
-            || reviews_tagged[cancellation_issue] = TRUE()),
+        CALCULATE(
+            [Reviews],
+            FILTER(
+                reviews_tagged,
+                reviews_tagged[low_star] = TRUE()
+                    && (reviews_tagged[customer_support_mentioned] = TRUE()
+                        || reviews_tagged[refund_problem] = TRUE()
+                        || reviews_tagged[cancellation_issue] = TRUE()))),
         [Low Star Reviews])
 
 Order Delay % = DIVIDE(CALCULATE(COUNTROWS(orders_clean), orders_clean[delay_over_40] = TRUE()), COUNTROWS(orders_clean))
