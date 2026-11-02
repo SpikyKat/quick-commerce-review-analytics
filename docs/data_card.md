@@ -1,7 +1,10 @@
 # Data card
 
-Three files, all downloaded from Kaggle by me. The Kaggle page, author and licence for each still need to be recorded
-here before any public release; I have not verified them. Raw files are not in this repository.
+Three files, all downloaded from Kaggle by me. Raw files are not in this repository.
+
+**Licence and attribution:** the owner of this project states the Kaggle data is licensed CC BY-SA 4.0. The Kaggle page
+URL and author for each file are not recorded here yet and still need to be added. Any derived data tables published
+from this project should carry the same licence and credit the original authors.
 
 | File | Rows | What it really is | Used for |
 |---|---|---|---|
